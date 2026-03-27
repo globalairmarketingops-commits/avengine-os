@@ -2,9 +2,16 @@
   "_meta": {
     "connector": "google_ads",
     "account": "392-951-4382",
-    "fetched_at": null,
+    "fetched_at": "2026-03-27T18:00:00Z",
     "date_range": "last_30d",
-    "status": "awaiting_fetch"
+    "status": "fresh"
   },
-  "data": null
+  "data": [
+    {"campaign": "**LP Branded - Tier 1 {New}", "clicks": 131, "impressions": 423, "ctr": 0.3097, "conversions": 1, "cost_per_conversion": 160.24, "spend": 160.24},
+    {"campaign": "**LP Search - Tier 1 - Jets {NEW}", "clicks": 1011, "impressions": 8260, "ctr": 0.1224, "conversions": 22, "cost_per_conversion": 13.01, "spend": 288.67},
+    {"campaign": "**Aircraft Operating Cost Sales", "clicks": 667, "impressions": 6928, "ctr": 0.0963, "conversions": 13, "cost_per_conversion": 8.18, "spend": 107.33},
+    {"campaign": "CIRRUS | SINGLE | BUYER INTENT | US | SEARCH", "clicks": 4425, "impressions": 38512, "ctr": 0.1149, "conversions": 7, "cost_per_conversion": 314.79, "spend": 2203.52},
+    {"campaign": "CESSNA | SINGLE | BUYER INTENT | US | SEARCH", "clicks": 5615, "impressions": 43018, "ctr": 0.1305, "conversions": 5, "cost_per_conversion": 445.48, "spend": 2227.38},
+    {"campaign": "BEECHCRAFT | SINGLE | BUYER INTENT | US | SEARCH", "clicks": 1790, "impressions": 12812, "ctr": 0.1397, "conversions": 0, "cost_per_conversion": null, "spend": 1780.84}
+  ]
 }

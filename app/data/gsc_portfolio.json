@@ -2,9 +2,30 @@
   "_meta": {
     "connector": "searchconsole",
     "account": "sc-domain:globalair.com",
-    "fetched_at": null,
+    "fetched_at": "2026-03-27T18:00:00Z",
     "date_range": "last_30d",
-    "status": "awaiting_fetch"
+    "status": "fresh"
   },
-  "data": null
+  "data": [
+    {"page": "https://www.globalair.com/aircraft-for-sale/helicopters", "clicks": 15765, "impressions": 441723, "ctr": 0.0357, "position": 7.15},
+    {"page": "https://www.globalair.com/aircraft-for-sale/private-jet", "clicks": 5297, "impressions": 312419, "ctr": 0.017, "position": 9.45},
+    {"page": "https://www.globalair.com/aircraft-for-sale", "clicks": 3982, "impressions": 157808, "ctr": 0.0252, "position": 11.61},
+    {"page": "https://www.globalair.com/aircraft-for-sale/private-jet/cirrus-aircraft", "clicks": 1982, "impressions": 100621, "ctr": 0.0197, "position": 5.75},
+    {"page": "https://www.globalair.com/aircraft-for-sale/cessna-172", "clicks": 880, "impressions": 96101, "ctr": 0.0092, "position": 7.08},
+    {"page": "https://www.globalair.com/aircraft-for-sale/single-engine-piston", "clicks": 369, "impressions": 20414, "ctr": 0.0181, "position": 10.34},
+    {"page": "https://www.globalair.com/aircraft-for-sale/cirrus-sr22", "clicks": 194, "impressions": 34699, "ctr": 0.0056, "position": 7.01},
+    {"page": "https://www.globalair.com/aircraft-for-sale/bonanza-a36", "clicks": 180, "impressions": 13179, "ctr": 0.0137, "position": 6.97},
+    {"page": "https://www.globalair.com/aircraft-for-sale/twin-engine-turbine", "clicks": 304, "impressions": 16997, "ctr": 0.0179, "position": 9.52},
+    {"page": "https://www.globalair.com/aircraft-for-sale/king-air-350", "clicks": 372, "impressions": 13120, "ctr": 0.0284, "position": 7.50},
+    {"page": "https://www.globalair.com/aircraft-for-sale/gulfstream-g550", "clicks": 1160, "impressions": 44411, "ctr": 0.0261, "position": 6.19},
+    {"page": "https://www.globalair.com/aircraft-for-sale/gulfstream-g650", "clicks": 1017, "impressions": 28661, "ctr": 0.0355, "position": 8.53},
+    {"page": "https://www.globalair.com/aircraft-for-sale/gulfstream-g700", "clicks": 1064, "impressions": 11871, "ctr": 0.0896, "position": 7.53},
+    {"page": "https://www.globalair.com/aircraft-for-sale/phenom-300", "clicks": 657, "impressions": 19884, "ctr": 0.033, "position": 6.81},
+    {"page": "https://www.globalair.com/aircraft-for-sale/citation-longitude", "clicks": 208, "impressions": 3706, "ctr": 0.0561, "position": 7.17},
+    {"page": "https://www.globalair.com/aircraft-for-sale/global-7500", "clicks": 689, "impressions": 15846, "ctr": 0.0435, "position": 8.11},
+    {"page": "https://www.globalair.com/aircraft-for-sale/pilatus-pc-24", "clicks": 480, "impressions": 12068, "ctr": 0.0398, "position": 7.07},
+    {"page": "https://www.globalair.com/aircraft-for-sale/bell-407", "clicks": 123, "impressions": 8822, "ctr": 0.0139, "position": 6.60},
+    {"page": "https://www.globalair.com/aircraft-for-sale/agusta-aw139", "clicks": 182, "impressions": 7819, "ctr": 0.0233, "position": 6.25},
+    {"page": "https://www.globalair.com/aircraft-for-sale/amphibian", "clicks": 1321, "impressions": 45138, "ctr": 0.0293, "position": 7.36}
+  ]
 }

@@ -1,11 +1,11 @@
 {
   "app": "AvEngineOS",
   "version": "1.0",
-  "last_refresh": null,
+  "last_refresh": "2026-03-27T18:00:00Z",
   "connectors": {
-    "google_ads": { "account": "392-951-4382", "status": "awaiting_fetch" },
-    "ga4": { "account": "347642641", "status": "awaiting_fetch" },
-    "gsc": { "account": "sc-domain:globalair.com", "status": "awaiting_fetch" }
+    "google_ads": { "account": "392-951-4382", "status": "fresh", "rows": 6 },
+    "ga4": { "account": "347642641", "status": "fresh", "rows": 13 },
+    "gsc": { "account": "sc-domain:globalair.com", "status": "fresh", "rows": 20 }
   },
   "refresh_instructions": "Run Windsor MCP get_data calls in Claude Code, write results to data/*.json, commit and push."
 }

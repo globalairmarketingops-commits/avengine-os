@@ -2,9 +2,23 @@
   "_meta": {
     "connector": "googleanalytics4",
     "account": "347642641",
-    "fetched_at": null,
+    "fetched_at": "2026-03-27T18:00:00Z",
     "date_range": "last_30d",
-    "status": "awaiting_fetch"
+    "status": "fresh"
   },
-  "data": null
+  "data": [
+    {"source": "google", "medium": "organic", "sessions": 120962, "conversions": 1241},
+    {"source": "(direct)", "medium": "(none)", "sessions": 50496, "conversions": 605},
+    {"source": "airmailnews", "medium": "email", "sessions": 9041, "conversions": 131},
+    {"source": "google", "medium": "cpc", "sessions": 11730, "conversions": 96},
+    {"source": "bing", "medium": "organic", "sessions": 11471, "conversions": 91},
+    {"source": "BrokerNet", "medium": "email", "sessions": 914, "conversions": 67},
+    {"source": "airmailfocus", "medium": "email", "sessions": 2417, "conversions": 29},
+    {"source": "chatgpt.com", "medium": "referral", "sessions": 633, "conversions": 28},
+    {"source": "yahoo", "medium": "organic", "sessions": 3290, "conversions": 26},
+    {"source": "m.facebook.com", "medium": "referral", "sessions": 4216, "conversions": 10},
+    {"source": "copilot.com", "medium": "referral", "sessions": 42, "conversions": 6},
+    {"source": "linkedin.com", "medium": "referral", "sessions": 367, "conversions": 4},
+    {"source": "duckduckgo", "medium": "organic", "sessions": 1887, "conversions": 4}
+  ]
 }
