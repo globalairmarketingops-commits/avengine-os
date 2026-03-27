@@ -35,6 +35,10 @@ const CommandCenter = (() => {
     html += renderFeaturedLeakageTile();
     html += '</div>';
 
+    // Row 2.5 — Data Health (Windsor connector status)
+    html += Components.sectionHeader('Data Health', 'Windsor.ai connector freshness');
+    html += renderDataHealth();
+
     // Row 3 — Top 10 Opportunity Queue (US-CMD-003)
     html += Components.sectionHeader('Top 10 Opportunities', 'Highest-scoring actions across all domains');
     html += renderOpportunityQueue();
@@ -333,6 +337,22 @@ const CommandCenter = (() => {
     Components.closeModal('modal-outcome');
     Components.showToast('Outcome recorded.', 'success');
     render(document.getElementById('content-area'));
+  }
+
+  function renderDataHealth() {
+    const health = Windsor.getHealthSummary();
+    const labels = { google_ads: 'Google Ads', ga4: 'GA4', gsc: 'Search Console' };
+    let html = '<div class="row-grid row-grid-3">';
+    health.forEach(h => {
+      const ageText = h.age_hours !== null ? Math.round(h.age_hours) + 'h ago' : 'Never fetched';
+      const statusColor = h.status === 'fresh' ? 'green' : h.status === 'aging' ? 'amber' : 'red';
+      html += Components.statusCard(labels[h.connector] || h.connector, h.status.toUpperCase(), {
+        owner: h.has_data ? `${h.row_count} rows` : 'No data',
+        cod: ageText
+      });
+    });
+    html += '</div>';
+    return html;
   }
 
   return { render, bulkAssign, doBulkAssign, showAddDecision, saveDecision, addOutcome, saveOutcome, showGateEdit, saveGateEdit };

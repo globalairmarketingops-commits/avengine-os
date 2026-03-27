@@ -268,19 +268,51 @@ const PPCHub = (() => {
   }
 
   function renderAuctionInsights() {
-    // Seed data — no Windsor auction insights yet
+    const auctionData = Store.get('avengineos_ppc_auction_insights') || {};
+    const hasData = auctionData.overlap_rate != null;
     return `<div class="ga-card" style="padding:16px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
         <span style="font-size:13px;font-weight:600;color:var(--ga-navy);">Controller.com Competitive Scorecard</span>
-        ${Components.windsorDot('google_ads')}
+        <button class="btn btn-ghost btn-sm" onclick="PPCHub.showAuctionInput()">Update</button>
       </div>
       <div class="row-grid row-grid-4">
-        ${Components.kpiTile('Overlap Rate', '—', { confidence: 'PENDING', subtitle: 'Awaiting Windsor.ai data' })}
-        ${Components.kpiTile('IS Delta', '—', { confidence: 'PENDING' })}
-        ${Components.kpiTile('Position Above Rate', '—', { confidence: 'PENDING' })}
-        ${Components.kpiTile('Outranking Share', '—', { confidence: 'PENDING' })}
+        ${Components.kpiTile('Overlap Rate', hasData ? auctionData.overlap_rate + '%' : '—', { confidence: hasData ? 'CONFIRMED' : 'PENDING', subtitle: hasData ? 'Last: ' + Components.formatDate(auctionData.last_updated) : 'Manual input required' })}
+        ${Components.kpiTile('IS Delta', hasData ? (auctionData.is_delta > 0 ? '+' : '') + auctionData.is_delta + '%' : '—', { confidence: hasData ? 'CONFIRMED' : 'PENDING' })}
+        ${Components.kpiTile('Position Above Rate', hasData ? auctionData.position_above + '%' : '—', { confidence: hasData ? 'CONFIRMED' : 'PENDING' })}
+        ${Components.kpiTile('Outranking Share', hasData ? auctionData.outranking_share + '%' : '—', { confidence: hasData ? 'CONFIRMED' : 'PENDING' })}
       </div>
     </div>`;
+  }
+
+  function showAuctionInput() {
+    const data = Store.get('avengineos_ppc_auction_insights') || {};
+    Components.showModal(Components.modal('Update Auction Insights — Controller.com', `
+      <p style="font-size:12px;color:var(--ga-muted);margin-bottom:16px;">Enter from Google Ads > Campaigns > Auction Insights report</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="form-group"><label class="form-label">Overlap Rate (%)</label><input class="form-input" id="ai-overlap" type="number" step="0.1" value="${data.overlap_rate || ''}"></div>
+        <div class="form-group"><label class="form-label">Impression Share Delta (%)</label><input class="form-input" id="ai-is-delta" type="number" step="0.1" value="${data.is_delta || ''}"></div>
+        <div class="form-group"><label class="form-label">Position Above Rate (%)</label><input class="form-input" id="ai-pos-above" type="number" step="0.1" value="${data.position_above || ''}"></div>
+        <div class="form-group"><label class="form-label">Outranking Share (%)</label><input class="form-input" id="ai-outranking" type="number" step="0.1" value="${data.outranking_share || ''}"></div>
+      </div>
+    `, { id: 'modal-auction', actions: [
+      { label: 'Cancel', class: 'btn-ghost', onClick: "Components.closeModal('modal-auction')" },
+      { label: 'Save', class: 'btn-primary', onClick: 'PPCHub.saveAuctionInput()' }
+    ]}));
+  }
+
+  function saveAuctionInput() {
+    const data = {
+      overlap_rate: parseFloat(document.getElementById('ai-overlap')?.value) || null,
+      is_delta: parseFloat(document.getElementById('ai-is-delta')?.value) || null,
+      position_above: parseFloat(document.getElementById('ai-pos-above')?.value) || null,
+      outranking_share: parseFloat(document.getElementById('ai-outranking')?.value) || null,
+      last_updated: new Date().toISOString()
+    };
+    Store.set('avengineos_ppc_auction_insights', data);
+    Components.closeModal('modal-auction');
+    Components.showToast('Auction insights updated.', 'success');
+    Events.log('ppc_auction_insights_update', data);
+    render(document.getElementById('content-area'));
   }
 
   function renderPPCOpportunities() {
@@ -455,5 +487,5 @@ const PPCHub = (() => {
     render(document.getElementById('content-area'));
   }
 
-  return { render, showCreateExperiment, saveExperiment, showPathwaySelector, updatePathwayFields, applyPathway, toggleGovernanceOverride, doGovernanceOverride, showMetricsInput, loadMetricsForCampaign, saveMetrics };
+  return { render, showCreateExperiment, saveExperiment, showPathwaySelector, updatePathwayFields, applyPathway, toggleGovernanceOverride, doGovernanceOverride, showMetricsInput, loadMetricsForCampaign, saveMetrics, showAuctionInput, saveAuctionInput };
 })();
