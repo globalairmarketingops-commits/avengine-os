@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "connector": "googleanalytics4",
+    "account": "347642641",
+    "fetched_at": null,
+    "date_range": "last_30d",
+    "status": "awaiting_fetch"
+  },
+  "data": null
+}

@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "connector": "google_ads",
+    "account": "392-951-4382",
+    "fetched_at": null,
+    "date_range": "last_30d",
+    "status": "awaiting_fetch"
+  },
+  "data": null
+}

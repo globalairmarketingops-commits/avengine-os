@@ -1,0 +1,10 @@
+{
+  "_meta": {
+    "connector": "searchconsole",
+    "account": "sc-domain:globalair.com",
+    "fetched_at": null,
+    "date_range": "last_30d",
+    "status": "awaiting_fetch"
+  },
+  "data": null
+}

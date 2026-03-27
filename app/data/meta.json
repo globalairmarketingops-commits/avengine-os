@@ -1,0 +1,11 @@
+{
+  "app": "AvEngineOS",
+  "version": "1.0",
+  "last_refresh": null,
+  "connectors": {
+    "google_ads": { "account": "392-951-4382", "status": "awaiting_fetch" },
+    "ga4": { "account": "347642641", "status": "awaiting_fetch" },
+    "gsc": { "account": "sc-domain:globalair.com", "status": "awaiting_fetch" }
+  },
+  "refresh_instructions": "Run Windsor MCP get_data calls in Claude Code, write results to data/*.json, commit and push."
+}
